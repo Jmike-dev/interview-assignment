@@ -9,7 +9,7 @@ export default function Home() {
   const url = "https://jsonplaceholder.typicode.com/users";
   const [users, setUser] = useState([]);
   const [createUser, setCreateUser] = useState(false);
-  const [ updateUser, setUpdateUser] = useState(false);
+  const [updateUser, setUpdateUser] = useState(false);
   // const [userId, setUserId] = useState(null);
 
   // fetching from the API
@@ -24,16 +24,16 @@ export default function Home() {
 
   return (
     <Fragment>
-      <div className="w-full  text-blue-100 h-full rounded-md flex flex-col">
+      <div className="w-full text-blue-100 h-full rounded-md flex flex-col justify-center content-center px-3">
         <button
           onClick={() => setCreateUser(true)}
-          className="bg-purple-600 rounded-md text-white p-2 m-1 "
+          className="bg-purple-600 rounded-md text-white p-2 m-1 w-full "
         >
           create
         </button>
-        <table className="table-auto border-separate border border-slate-500  bg-blue-950 rounded-md">
-          <thead >
-            <tr>
+        <table className="table-auto border-separate border border-slate-500  bg-blue-950 rounded-md w-full h-full ">
+          <thead>
+            <tr className="">
               <th className="border border-slate-600 ">name</th>
               <th className="border border-slate-600 ">username</th>
               <th className="border border-slate-600 ">email</th>
@@ -43,7 +43,7 @@ export default function Home() {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id}>
+              <tr key={user.id} className="">
                 <td className="border border-slate-600 ">{user.name}</td>
                 <td className="border border-slate-600 ">{user.username}</td>
                 <td className="border border-slate-600 ">{user.email}</td>
