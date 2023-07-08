@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export const Update = ({ isVisible, onClose}) => {
+export const Update = ({ isVisible, onClose }) => {
   // defining states
   const url = "https://jsonplaceholder.typicode.com/users";
 
@@ -15,10 +15,11 @@ export const Update = ({ isVisible, onClose}) => {
   });
 
   useEffect(() => {
-    axios.get(url)
-    .then(response => setInputData(response.data))
-    .catch(error => console.log(error))
-  },[])
+    axios
+      .get(url)
+      .then((response) => setInputData(response.data))
+      .catch((error) => console.log(error));
+  }, []);
 
   // submiting input to api
   const handleSubmit = (event) => {
@@ -49,7 +50,7 @@ export const Update = ({ isVisible, onClose}) => {
         onSubmit={() => handleSubmit(event)}
       >
         <button
-          className=" text-white text-xl sm:text-2xl place-self-end"
+          className=" text-white text-xl sm:text-2xl place-self-end  bg-red-400 px-2 rounded-lg text-center"
           onClick={() => onClose()}
         >
           x

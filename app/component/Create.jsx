@@ -19,7 +19,10 @@ export const Create = ({ isVisible, onClose}) => {
     event.preventDefault();
     axios
       .post(url, { inputData })
-      .then((response) => console.log(response))
+      .then((response) =>{
+        alert("added new user");
+        console.log(response);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -43,7 +46,7 @@ export const Create = ({ isVisible, onClose}) => {
         onSubmit={() => handleSubmit(event)}
       >
         <button
-          className=" text-white  text-xl sm:text-2xl place-self-end"
+          className=" text-white  text-xl sm:text-2xl place-self-end bg-red-400 px-2 rounded-lg text-center"
           onClick={() => onClose()}
         >
           x
